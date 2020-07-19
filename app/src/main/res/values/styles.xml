@@ -16,4 +16,9 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="ArmataTextViewStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/armata</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
