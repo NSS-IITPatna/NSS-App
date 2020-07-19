@@ -2,18 +2,24 @@
     <string name="app_name">NSS_IITPatna</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_events">Events</string>
     <string name="menu_about_us">About us</string>
     <string name="menu_team">Team</string>
     <string name="menu_sign_in">Sign In</string>
     <string name="menu_think_thank">Think/Thank</string>
     <string name="menu_sign_up">Sign Up</string>
+    <string name="menu_units">Units</string>
+
+    <string name="title_activity_units">UnitsActivity</string>
+    <string name="tab_text_adhyayan">Adhyayan</string>
+    <string name="tab_text_chetna">Chetna</string>
+    <string name="tab_text_pragati">Pragati</string>
+    <string name="tab_text_rural_dev">Rural Development</string>
+    <string name="tab_text_environment">Environment</string>
+    <string name="tab_text_prayatna">Prayatna</string>
 </resources>

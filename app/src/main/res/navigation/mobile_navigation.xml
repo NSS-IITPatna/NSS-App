@@ -49,5 +49,10 @@
         android:name="com.example.nss_iitpatna.ui.thinkThank.ThinkThankFragment"
         android:label="@string/menu_think_thank"
         tools:layout="@layout/fragment_think_thank" />
+    <activity
+        android:id="@+id/nav_units"
+        android:name="com.example.nss_iitpatna.ui.units.UnitsActivity"
+        android:label="@string/menu_units"
+        tools:layout="@layout/activity_units" />
 
 </navigation>

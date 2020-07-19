@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home,
                 R.id.nav_gallery,
                 R.id.nav_about_us,
+                R.id.nav_units,
                 R.id.nav_events,
                 R.id.nav_sign_in,
                 R.id.nav_team,
