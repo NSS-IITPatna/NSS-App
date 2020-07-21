@@ -22,7 +22,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface NetworkService {
-    @GET("5f168331c58dc34bf5d7a185/1")
+    @GET("5f168331c58dc34bf5d7a185/3")
     fun getImagesAsync():
             Deferred<List<Gallery>>
 }

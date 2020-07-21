@@ -17,20 +17,34 @@ class GalleryViewModel : ViewModel() {
     val images: LiveData<List<Gallery>>
         get() = _images
 
+    private val _label = MutableLiveData<String>()
+    val label: LiveData<String>
+        get() = _label
+
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
     init {
-        getImages()
+        getImages("")
     }
 
-    private fun getImages() {
+    fun getImages(label: String) {
+        _label.value = label
         coroutineScope.launch {
             val getImagesDeferred = Api.networkService.getImagesAsync()
             try {
                 val listResult = getImagesDeferred.await()
-                if (listResult.isNotEmpty())
-                    _images.value = listResult
+                if (listResult.isNotEmpty()) {
+                    if (label != "") {
+                        val newList = emptyList<Gallery>().toMutableList()
+                        for (i in listResult) {
+                            if (i.label == label)
+                                newList += i
+                            _images.value = newList
+                        }
+                    } else
+                        _images.value = listResult
+                }
             } catch (e: Exception) {
                 Log.e("GalleryViewModel", e.message.toString())
             }

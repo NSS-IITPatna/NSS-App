@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nss_iitpatna.databinding.CardGalleryBinding
 import com.example.nss_iitpatna.network.Gallery
 
-class GalleryAdapter() : ListAdapter<Gallery, GalleryAdapter.GalleryViewHolder>(DiffCallback) {
+class GalleryAdapter(private val onClickListener: OnClickListener) :
+    ListAdapter<Gallery, GalleryAdapter.GalleryViewHolder>(DiffCallback) {
 
     class GalleryViewHolder(private val binding: CardGalleryBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -28,6 +29,9 @@ class GalleryAdapter() : ListAdapter<Gallery, GalleryAdapter.GalleryViewHolder>(
     override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
         val gallery = getItem(position)
         holder.bind(gallery)
+        holder.itemView.setOnClickListener {
+            onClickListener.onClick(gallery)
+        }
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Gallery>() {
@@ -38,5 +42,9 @@ class GalleryAdapter() : ListAdapter<Gallery, GalleryAdapter.GalleryViewHolder>(
         override fun areContentsTheSame(oldItem: Gallery, newItem: Gallery): Boolean {
             return oldItem.imageUrl == newItem.imageUrl
         }
+    }
+
+    class OnClickListener(val clickListener: (gallery: Gallery) -> Unit) {
+        fun onClick(gallery: Gallery) = clickListener(gallery)
     }
 }
