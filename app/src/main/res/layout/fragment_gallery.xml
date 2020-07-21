@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.gallery.GalleryFragment">
 
-    <TextView
+    <data>
+
+        <variable
+            name="galleryViewModel"
+            type="com.example.nss_iitpatna.ui.gallery.GalleryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Gallery" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="@color/colorPrimary">
+
+        <View
+            android:id="@+id/gallery_label"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            app:layout_constraintBottom_toTopOf="@id/gallery_recycler_view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gallery_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gallery_label"
+            app:layout_constraintVertical_weight="1"
+            tools:listitem="@layout/card_gallery" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
