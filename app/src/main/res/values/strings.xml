@@ -22,4 +22,12 @@
     <string name="tab_text_rural_dev">Rural Development</string>
     <string name="tab_text_environment">Environment</string>
     <string name="tab_text_prayatna">Prayatna</string>
+
+    <string-array name="units_array">
+
+        <item>Adhyayan</item>
+        <item>Chetna</item>
+        <item>Environment</item>
+        <item>Rural Development</item>
+    </string-array>
 </resources>

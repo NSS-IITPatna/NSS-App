@@ -36,6 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="64dp"
                 android:layout_gravity="bottom"
+                app:tabTextAppearance="@style/ArmataTextViewStyle"
                 android:background="@android:color/transparent"
                 app:layout_collapseMode="pin"
                 app:tabGravity="fill"
