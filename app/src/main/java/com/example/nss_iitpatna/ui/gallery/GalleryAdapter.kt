@@ -15,6 +15,7 @@ class GalleryAdapter(private val onClickListener: OnClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(gallery: Gallery) {
             binding.gallery = gallery
+            binding.galleryImage.adjustViewBounds = true
             binding.executePendingBindings()
         }
     }

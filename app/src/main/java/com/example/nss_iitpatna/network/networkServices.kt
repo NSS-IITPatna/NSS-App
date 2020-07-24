@@ -25,9 +25,22 @@ interface NetworkService {
     @GET("5f168331c58dc34bf5d7a185/3")
     fun getImagesAsync():
             Deferred<List<Gallery>>
+
+    @GET("5f1a1a54c58dc34bf5d984d1/2")
+    fun getTeamAsync():
+            Deferred<List<Team>>
 }
 
 data class Gallery(var imageUrl: String, var label: String)
+
+data class Team(
+    var name: String,
+    var designation: String,
+    var imageUrl: String,
+    var facebookLink: String,
+    var twitterLink: String,
+    var instagramLink: String
+)
 
 object Api {
     val networkService: NetworkService by lazy {

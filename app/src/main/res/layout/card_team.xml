@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="team"
+            type="com.example.nss_iitpatna.network.Team" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:clipToPadding="false"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="8dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:id="@+id/card_team_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/team_image"
+                imageUrl="@{team.imageUrl}"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                app:civ_border_color="@android:color/holo_green_light"
+                app:civ_border_width="4dp"
+                tools:src="@drawable/chetna_appbar" />
+
+            <TextView
+                android:id="@+id/team_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/armata"
+                android:gravity="center_horizontal"
+                android:text="@{team.name}"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="24dp"
+                tools:text="Team Name" />
+
+            <TextView
+                android:id="@+id/team_designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/armata"
+                android:gravity="center_horizontal"
+                android:text="@{team.designation}"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                tools:text="Team post" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    browseUrl="@{team.facebookLink}"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_facebook" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    browseUrl="@{team.twitterLink}"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_twitter" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    browseUrl="@{team.instagramLink}"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_margin="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_instagram" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
