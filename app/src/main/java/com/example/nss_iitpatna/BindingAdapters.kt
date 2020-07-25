@@ -3,10 +3,13 @@ package com.example.nss_iitpatna
 import android.content.Intent
 import android.net.Uri
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import java.text.SimpleDateFormat
+import java.util.*
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?) {
@@ -34,4 +37,11 @@ fun browseUrl(imgView: ImageView, url: String?) {
             intent.data = Uri.parse(url)
         it.context.startActivity(intent)
     }
+}
+
+@BindingAdapter("timeStamp")
+fun timeStamp(textView: TextView, timeStamp: Long) {
+    val formatter = SimpleDateFormat("dd MMMM ,yyyy", Locale.ENGLISH)
+    val dataString = formatter.format(Date(timeStamp))
+    textView.text = dataString
 }
