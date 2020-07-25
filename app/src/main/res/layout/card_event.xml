@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.example.nss_iitpatna.network.Event" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:background="@android:color/white"
+        app:cardCornerRadius="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/event_image"
+                browseUrl="@{event.link}"
+                imageUrl="@{event.imageUrl}"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:tint="#6F000000"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/chetna_appbar" />
+
+            <TextView
+                android:id="@+id/event_date"
+                timeStamp="@{event.date}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/armata"
+                android:padding="4dp"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/event_title"
+                app:layout_constraintLeft_toLeftOf="@id/event_image"
+                tools:text="15th January 2020" />
+
+            <TextView
+                android:id="@+id/event_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/armata"
+                android:gravity="bottom"
+                android:padding="4dp"
+                android:text="@{event.title}"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="32sp"
+                app:layout_constraintBottom_toTopOf="@id/event_description"
+                app:layout_constraintLeft_toLeftOf="@id/event_image"
+                tools:text="Title" />
+
+            <TextView
+                android:id="@+id/event_description"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fontFamily="@font/armata"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="@{event.description}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/event_image"
+                app:layout_constraintVertical_weight="1"
+                tools:text="Description" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

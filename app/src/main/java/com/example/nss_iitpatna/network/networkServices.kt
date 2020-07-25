@@ -29,6 +29,10 @@ interface NetworkService {
     @GET("5f1a1a54c58dc34bf5d984d1/2")
     fun getTeamAsync():
             Deferred<List<Team>>
+
+    @GET("5f1bd521c58dc34bf5da4c55/2")
+    fun getEventsAsync():
+            Deferred<List<Event>>
 }
 
 data class Gallery(var imageUrl: String, var label: String)
@@ -40,6 +44,14 @@ data class Team(
     var facebookLink: String,
     var twitterLink: String,
     var instagramLink: String
+)
+
+data class Event(
+    var date: Long,
+    var imageUrl: String,
+    var title: String,
+    var description: String,
+    var link: String
 )
 
 object Api {
